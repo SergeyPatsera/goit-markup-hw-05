@@ -66,7 +66,7 @@
       <section class="hero-group">
         <div class="container hero-container">
           <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-          <button class="hero-btn" type="button">Замовити послугу</button>
+          <button class="hero-btn" type="button" data-modal-open>Замовити послугу</button>
         </div>
       </section>
       <!--Feature-->
@@ -128,17 +128,25 @@
           <h2 class="works-title topic">Чим ми займаємося</h2>
           <ul class="works-list">
             <li class="works-item">
+               <div class="label">
+                <h3 class="label-title">Десктопні додатки</h3>
+              </div>
               <img class="works-img" src="./images/box-1.jpg" alt="Набір коду" width="370" />
             </li>
             <li class="works-item">
+              <div class="label">
+                <h3 class="label-title">Мобільні додатки</h3>
+              </div>
               <img
                 class="works-img"
                 src="./images/box-2.jpg"
                 alt="Тримає телефон працюючи з ноутбуком"
-                width="370"
-              />
+                width="370"/>
             </li>
             <li class="works-item">
+              <div class="label">
+                <h3 class="label-title">Дизайнерські рішення</h3>
+              </div>
               <img class="works-img" src="./images/box-3.jpg" alt="Малює на планшеті" width="370" />
             </li>
           </ul>
@@ -547,9 +555,19 @@
               </a>
                 </li>
                 </ul>
-
         </div>
       </div>
     </footer>
+    <!--modal window-->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-btn" type="button" data-modal-close>
+          <svg width="11px" height="11px">
+            <use href="./images/icons.svg#vector"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
