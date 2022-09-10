@@ -23,6 +23,8 @@
     /*Button hero*/
     --hero-btn-cl: #2196F3;
     --hero-btn-txt: #FFFFFF;
+    --hero-bth-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    --hero-btn-hv: #188CE8;
     /*Button portfolio*/
     --btn-bg-hover: #2196F3;
     --btn-text-hover: #FFFFFF;
@@ -324,11 +326,15 @@ nav {
     min-height: 50px;
     margin-top: 30px;
     padding: 9px 3px;
-    border: 1px solid #2196F3;
+    border: none;
     border-radius: 4px;
-
+    box-shadow: var(--hero-bth-shadow);
+    transition: background-color var(--anim-fast-hv);
 }
-
+.hero-btn:hover,
+.hero-btn:focus {
+    background-color: var(--hero-btn-hv);
+}
 /*Особливості*/
 .visually-hidden {
     position: absolute;
@@ -397,6 +403,9 @@ nav {
 }
 
 .label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     width: 100%;
     height: 70px;
@@ -405,16 +414,12 @@ nav {
     left: 0;
 }
 .label-title {
-    position: absolute;
     font-size: 14px;
     line-height: calc(16/14);
     text-align: center;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: #FFFFFF;
-    bottom: 27px;
-    right: 50%;
-    transform: translateX(50%);
 }
 .works-list {
     list-style: none;
@@ -532,7 +537,7 @@ background-color: var(--light-bg-cl);
     height: 90px;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
-    transition: color var(--anim-fast-hv), border-color(--anim-fast-hv);
+    transition: color var(--anim-fast-hv), border-color var(--anim-fast-hv);
 
 }
 .clients-link:hover,
@@ -563,10 +568,10 @@ background-color: var(--light-bg-cl);
     font-size: 16px;
     line-height: calc(26/16);
     background-color: var(--btn-bg-cl);
-    padding: 5px 21px;
+    padding: 6px 21px;
     border-radius: 4px;
-    border: 1px solid rgba(238, 238, 238, 1);
-    transition: color var(--anim-fast-hv), background-color(--anim-fast-hv), box-shadow(--anim-fast-hv), border-color(--anim-fast-hv);
+    border: none;
+    transition: color var(--anim-fast-hv), background-color(--anim-fast-hv), box-shadow(--anim-fast-hv);
 }
 
 .btn:hover,
@@ -576,7 +581,6 @@ background-color: var(--light-bg-cl);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
         0px 1px 2px rgba(0, 0, 0, 0.08),
         0px 2px 2px rgba(0, 0, 0, 0.12);
-        border-color: var(--btn-bg-hover);
 }
 
 .portfolio-list {
@@ -658,7 +662,9 @@ line-height: calc(28/18);
     z-index: 1000;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transition: opacity var(--anim-fast-hv);
 }
 .modal {
     position: absolute;
@@ -670,6 +676,8 @@ line-height: calc(28/18);
     background-color: var(--accent-bg-cl);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform var(--anim-fast-hv);
 
 }
 .modal-btn {
@@ -684,6 +692,7 @@ line-height: calc(28/18);
    border-radius: 50%;
     background-color: var(--accent-bg-cl);
     border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 .backdrop.is-hidden {
     opacity: 0;
